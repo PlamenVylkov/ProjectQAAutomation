@@ -26,12 +26,12 @@ public class TestUtil {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         loadTestUrl(applicationUrl);
         driver.manage().deleteAllCookies();
-//        driver.manage().window().fullscreen();
+        driver.manage().window().fullscreen();
     }
 
     @AfterMethod
     public void tearDown(){
-        //driver.quit();
+        driver.quit();
     }
 
     private void setupBrowserDriver(String browser){
