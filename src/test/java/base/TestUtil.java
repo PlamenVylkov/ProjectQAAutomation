@@ -20,17 +20,20 @@ public class TestUtil {
 
     @BeforeMethod
     public void setUp(){
-
+        //Read config file
         readConfig( "src/test/resources/config.properties");
         setupBrowserDriver(browser);
+        //set implicit wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
+        //Load url address
         loadTestUrl(applicationUrl);
-        driver.manage().deleteAllCookies();
+        //Set fullscreen option
         driver.manage().window().fullscreen();
     }
 
     @AfterMethod
     public void tearDown(){
+        //Quit the browser
         driver.quit();
     }
 
@@ -57,6 +60,7 @@ public class TestUtil {
 
     private void readConfig(String filePath){
         try {
+            //Read the config file
             FileInputStream configFile = new FileInputStream(filePath);
             Properties config = new Properties();
             config.load(configFile);
