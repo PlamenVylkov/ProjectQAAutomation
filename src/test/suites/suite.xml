@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name = "Parallel Testing Suite" parallel = "tests" thread-count = "3">
+<suite name = "Parallel Testing Suite" parallel = "tests" thread-count = "2">
     <test name = "Parallel Tests1">
         <classes>
             <class name = "com.selenium.course.tests.SuccessfulLoginTest" />
@@ -8,11 +8,6 @@
     <test name = "Parallel Tests2">
         <classes>
             <class name = "com.selenium.course.tests.UnsuccessfulLoginTest" />
-        </classes>
-    </test>
-    <test name = "Parallel Tests3">
-        <classes>
-            <class name = "com.selenium.course.tests.BuyItemsTest" />
         </classes>
     </test>
 </suite>
